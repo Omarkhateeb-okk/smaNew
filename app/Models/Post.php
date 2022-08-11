@@ -21,7 +21,7 @@ class Post extends Model
     ];
     public function tag()
     {
-        return $this->belongsToMany(Tag::class, 'article_tag');
+        return $this->belongsToMany(Tag::class, 'post_tag');
     }
     public function category()
     {

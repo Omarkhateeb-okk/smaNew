@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\TagController;
 
 
 
@@ -25,10 +26,15 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
     Route::get('edit-category/{category_id}',[App\Http\Controllers\Admin\CategoryController::class,'edit']);
     Route::put('update-category/{category_id}',[App\Http\Controllers\Admin\CategoryController::class,'update']);
     Route::get('delete-category/{category_id}',[App\Http\Controllers\Admin\CategoryController::class,'destroy']);
-
+        // tags Routs
+    Route::get('tag',[App\Http\Controllers\Admin\TagController::class,'index']);
+    Route::get('add-tag',[App\Http\Controllers\Admin\TagController::class,'create']);
+    Route::post('add-tag',[App\Http\Controllers\Admin\TagController::class,'store']);
+    Route::get('edit-tag/{tag_id}',[App\Http\Controllers\Admin\TagController::class,'edit']);
+    Route::put('update-tag/{tag_id}',[App\Http\Controllers\Admin\TagController::class,'update']);
+    Route::get('delete-tag/{tag_id}',[App\Http\Controllers\Admin\TagController::class,'destroy']);
 
 //    posts Routes
-
 
     Route::get('posts',[App\Http\Controllers\Admin\PostController::class,'index']);
     Route::get('add-post',[App\Http\Controllers\Admin\PostController::class,'create']);

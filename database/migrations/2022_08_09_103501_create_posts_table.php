@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('name');
             $table->integer('category_id');
             $table->mediumText('description')->default(' ');
+            $table->string('image');
             $table->tinyInteger('status')->default('0');
             $table->integer('created_by');
             $table->timestamps();
