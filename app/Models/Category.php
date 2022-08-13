@@ -14,7 +14,8 @@ class Category extends Model
         'description',
         'image',
         'status',
-        'created_by'
+        'created_by',
+        'navbar'
     ];
 
 }

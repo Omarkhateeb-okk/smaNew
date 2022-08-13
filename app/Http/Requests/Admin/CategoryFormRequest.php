@@ -36,7 +36,12 @@ class CategoryFormRequest extends FormRequest
                 'nullable',
                 'mimes:jpeg,jpg,png'
                 ],
-
+            'navbar'=>[
+                'nullable',
+            ],
+            'status'=>[
+                'nullable',
+            ],
 
         ];
         return $rules;

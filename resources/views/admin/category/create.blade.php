@@ -34,9 +34,16 @@
                     </div>
                     <h6>Status Mode</h6>
                             <div class="col-md-3 mb-3">
-                            <label>Shown</label>
-                            <input type="checkbox" name="Shown"/>
+                                <label>Enable</label>
+                                <input type="checkbox" name="Shown"/>
                             </div>
+                            <div class="col-md-3 mb-3">
+                                <label cl>on navbar</label>
+                                <input type="checkbox" name="navbar"/>
+                            </div>
+
+
+
                         <div class="col-md-6">
                             <button type="submit" class="btn btn-primary">Save Cartegory</button>
                         </div>

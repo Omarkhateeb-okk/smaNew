@@ -25,13 +25,14 @@ class TagController extends Controller
 
     }
 
-    public function store(TagFormRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->validated();
+        $validate=[
+            'name'=>'required'
+        ];
 
         $tag = new tag;
-        $tag->name = $data['name'];
-        $tag->created_by = Auth::user()->id;
+        $tag->name = $request['name'];
         $tag->save();
         return redirect('admin/tag')->with('message', 'tag Added Successfully');
 
@@ -43,14 +44,15 @@ class TagController extends Controller
         return view('admin.tag.edit', compact('tag'));
     }
 
-    public function update(TagFormRequest $request, $tag_id)
+    public function update(Request $request, $tag_id)
     {
-
-        $data = $request->validated();
+        $validate=[
+            'name'=>'required'
+        ];
 
         $tag = Category::find($tag_id);
-        $tag->name = $data['name'];
-        $tag->description = $data['description'];
+        $tag->name = $request['name'];
+        $tag->description = $request['description'];
         $tag->created_by = Auth::user()->id;
         $tag->update();
         return redirect('admin/tag')->with('message', 'tag updated Successfully');

@@ -5,7 +5,6 @@
     <div class="container-fluid px-4">
 
 
-
         <div class="card mt-4">
             <div class="card-header">
                 <h4 class="">Edit Category </h4>
@@ -18,7 +17,8 @@
                         @endforeach
                     </div>
                 @endif
-                <form action="{{url('admin/update-category/'.$category->id)}}" method="POST" enctype="multipart/form-data" >
+                <form action="{{url('admin/update-category/'.$category->id)}}" method="POST"
+                      enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
@@ -27,7 +27,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="">Description</label>
-                        <textarea type="text" name="description" rows="5" class="form-control">{{$category->description}}</textarea>
+                        <textarea type="text" name="description" rows="5"
+                                  class="form-control">{{$category->description}}</textarea>
                     </div>
                     <div class="mb-3">
                         <label for="">Image</label>
@@ -35,34 +36,18 @@
                     </div>
 
                     <h6>Status Mode</h6>
-                        <div class="col-md-3 mb-3">
-                            <label>shown</label>
-                            <input type="checkbox" name="shown"/>
-                        </div>
-                        <div class="col-md-6">
-                            <button type="submit" class="btn btn-primary">Update Cartegory</button>
-                        </div>
-
+                    <div class="col-md-3 mb-3">
+                        <label>Enable</label>
+                        <input type="checkbox" name="Shown"/>
                     </div>
-
-
-
-
-
-
-
+                    <div class="col-md-3 mb-3">
+                        <label cl>on navbar</label>
+                        <input type="checkbox" name="navbar"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Cartegory</button>
+                </form>
             </div>
-
-
-
-
-
-
-            </form>
-
         </div>
-    </div>
-
     </div>
 
 @endsection

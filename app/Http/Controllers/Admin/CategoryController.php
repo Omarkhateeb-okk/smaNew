@@ -38,6 +38,7 @@ class CategoryController extends Controller
 
         }
         $category->status =$request->Shown==true? '0':'1';
+        $category->navbar =$request->navbar==true? '0':'1';
         $category->created_by =Auth::user()->id;
         $category->save();
         return redirect('admin/category')->with('message','category Added Successfully');
@@ -70,8 +71,8 @@ class CategoryController extends Controller
             $category->image= $filename;
 
         }
-    $category->navbar_status =$request->navbar_status==true? '1':'0';
-    $category->status =$request->Shown==true? '1':'0';
+    $category->navbar =$request->navbar==true? '1':'0';
+    $category->status =$request->Shown==true? '0':'1';
     $category->created_by =Auth::user()->id;
     $category->update();
     return redirect('admin/category')->with('message','category updated Successfully');

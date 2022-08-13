@@ -19,8 +19,8 @@ class CreateCategoriesTable extends Migration
             $table->mediumText('description');
             $table->string('image');
             $table->tinyInteger('status')->default(0);
+            $table->tinyInteger('navbar')->default(0);
             $table->integer('created_by');
-
             $table->timestamps();
         });
     }
